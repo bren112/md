@@ -1,0 +1,118 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1d1d1d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .catalog {
+    text-align: center;
+    margin: 20px;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .carousel {
+    width: 100%;
+    overflow: hidden; /* Esconder os cards extras */
+  }
+  
+  .carousel-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .card {
+    background-color: #333;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    text-align: left;
+    width: calc(50% - 40px); /* Exibe 2 cards por vez no desktop */
+    flex-shrink: 0; /* Impede que os cards encolham */
+  }
+  
+  .card h3 {
+    margin: 0 0 10px 0;
+  }
+  
+  .card img {
+    width: 100%; /* Preenche a largura total do card */
+    height: auto; /* Altura fixa para todas as imagens */
+    object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
+    border-radius: 8px;
+  }
+  
+  .card p {
+    margin: 10px 0 0 0;
+    color: #ddd;
+  }
+  
+  .carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+  button {
+    background-color: #555;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 10px;
+  }
+  
+  button:hover {
+    background-color: #777;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  footer img {
+    border-radius: 8px;
+    width: 300px;
+  }
+  
+  /* Ajustes de responsividade */
+  
+  /* Para tablets (largura menor que 800px) */
+  @media (max-width: 800px) {
+    .card {
+      width: calc(100% - 40px); /* Cada card ocupa a largura total */
+    }
+  }
+  
+  /* Para celulares (largura menor que 500px) */
+  @media (max-width: 500px) {
+    .card {
+      width: calc(100% - 20px); /* Menor espaço lateral nos cards */
+      padding: 15px;
+    }
+  
+    .card img {
+      height: 35pc /* Altura um pouco menor para se ajustar ao mobile */
+    }
+  
+    button {
+      padding: 8px;
+    }
+    
+    .carousel-controls {
+      margin-top: 20px; /* Maior espaçamento para melhor usabilidade no mobile */
+    }
+  }
+  
