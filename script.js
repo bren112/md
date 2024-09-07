@@ -1,28 +1,17 @@
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const carouselItems = document.querySelector('.carousel-items');
-const totalCards = carouselItems.children.length; // Número total de cards
-const cardsToShow = 2; // Quantidade de cards visíveis
-let currentIndex = 0;
+let currentPosition = 1; // Posição inicial do carrossel
+const totalItems = 8; // Total de itens no carrossel
+const carousel = document.getElementById('carousel');
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    currentPosition = currentPosition < totalItems ? currentPosition + 1 : 1; // Volta para o primeiro se for o último
+    updateCarousel();
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    currentPosition = currentPosition > 1 ? currentPosition - 1 : totalItems; // Vai para o último se for o primeiro
+    updateCarousel();
+});
 
 function updateCarousel() {
-  const cardWidth = carouselItems.children[0].offsetWidth + 20; // Largura do card + margens
-  const maxIndex = totalCards - cardsToShow;
-  if (currentIndex > maxIndex) currentIndex = maxIndex; // Impede de avançar além do último card
-  if (currentIndex < 0) currentIndex = 0; // Impede de retroceder antes do primeiro card
-  const offset = -currentIndex * cardWidth;
-  carouselItems.style.transform = `translateX(${offset}px)`;
+    carousel.style.setProperty('--position', currentPosition);
 }
-
-prevBtn.addEventListener('click', () => {
-  currentIndex -= cardsToShow; // Volta dois cards por vez
-  updateCarousel();
-});
-
-nextBtn.addEventListener('click', () => {
-  currentIndex += cardsToShow; // Avança dois cards por vez
-  updateCarousel();
-});
-
-// Atualiza o carrossel ao redimensionar a tela
-window.addEventListener('resize', updateCarousel);
