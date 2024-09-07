@@ -5,7 +5,7 @@ body {
   flex-direction: column;
   align-items: center;
   font-family: sans-serif;
-  background-color: rgb(12, 12, 12);
+  background-color: rgb(0, 0, 0);
   color: white;
 }
 
@@ -25,7 +25,44 @@ body {
 .sobre{
   max-width:40pc;
 }
+.instagram{
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 1pc;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #484848;
+  font-size: 1.7pc;
+  height: 4pc;
+  width: 14pc;
+  display: flex;
+  gap: 1pc;
+  flex-direction: row;
+  align-items: center;
+}
+.instagram svg{
 
+  color: #484848;
+
+}
+.gmail svg{
+
+  color: #484848;
+
+}
+.gmail{
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 1pc;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #484848;
+  font-size: 1.7pc;
+  height: 6pc;
+  width: 14pc;
+  display: flex;
+  gap: 1pc;
+  flex-direction: row;
+  align-items: center;
+}
 @media screen and (max-width: 768px) {
   .intro{
       display: flex;
@@ -65,6 +102,22 @@ body {
 
 
 main#carousel {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 8; /* Total de itens */
+  --middle: 4; /* Posição do meio */
+  --position: 1; /* Posição inicial */
+  pointer-events: none;
+}
+main#carousel2 {
   grid-row: 1 / 2;
   grid-column: 1 / 8;
   width: 100vw;
@@ -177,6 +230,10 @@ svg{
 
 
 #nextBtn , #prevBtn{
+  background-color: #48484800;
+  border: none;
+}
+#nextBtn2 , #prevBtn2{
   background-color: #48484800;
   border: none;
 }
