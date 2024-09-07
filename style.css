@@ -111,12 +111,17 @@ body {
   
 div.item img {
   max-width: 100%; /* Faz com que a imagem não exceda a largura do card */
-  max-height: 40%; /* Limita a altura da imagem */
+  max-height: 58%; /* Limita a altura da imagem */
   object-fit: contain; /* Mantém a proporção da imagem */
 }
 
 }
   @media screen and (max-width: 480px) {
+    div.item img {
+      max-width: 100%; /* Faz com que a imagem não exceda a largura do card */
+      max-height: 58%; /* Limita a altura da imagem */
+      object-fit: contain; /* Mantém a proporção da imagem */
+    }
   }
   
 .body {
@@ -276,7 +281,12 @@ svg{
   color: white;
 }
 
-
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 35pc;
+}
 #nextBtn , #prevBtn{
   background-color: #48484800;
   border: none;
@@ -284,4 +294,19 @@ svg{
 #nextBtn2 , #prevBtn2{
   background-color: #48484800;
   border: none;
+}  @media screen and (max-width: 480px) {
+  div.item img {
+    max-width: 100%; /* Faz com que a imagem não exceda a largura do card */
+    max-height: 58%; /* Limita a altura da imagem */
+    object-fit: contain; /* Mantém a proporção da imagem */
+  }
+}
+@media screen and (max-width: 768px) {
+ 
+div.item img {
+  max-width: 100%; /* Faz com que a imagem não exceda a largura do card */
+  max-height: 58%; /* Limita a altura da imagem */
+  object-fit: contain; /* Mantém a proporção da imagem */
+}
+
 }
