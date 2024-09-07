@@ -25,7 +25,7 @@ body {
 .sobre{
   max-width:40pc;
 }
-.instagram{
+.instagram {
   background-color: rgb(255, 255, 255);
   border: none;
   border-radius: 1pc;
@@ -38,7 +38,9 @@ body {
   gap: 1pc;
   flex-direction: row;
   align-items: center;
+  justify-content: center; /* Centraliza o texto no botão */
   text-decoration: none;
+  text-align: center; /* Certifica que o texto está centralizado */
 }
 .instagram svg{
 
