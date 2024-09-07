@@ -108,6 +108,12 @@ body {
       max-width:40pc;
       font-size: 1pc;
   }
+  
+div.item img {
+  max-width: 100%; /* Faz com que a imagem não exceda a largura do card */
+  max-height: 40%; /* Limita a altura da imagem */
+  object-fit: contain; /* Mantém a proporção da imagem */
+}
 
 }
   @media screen and (max-width: 480px) {
