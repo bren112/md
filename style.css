@@ -33,11 +33,12 @@ body {
   color: #484848;
   font-size: 1.7pc;
   height: 4pc;
-  width: 14pc;
+  width: 17pc;
   display: flex;
   gap: 1pc;
   flex-direction: row;
   align-items: center;
+  text-decoration: none;
 }
 .instagram svg{
 
@@ -62,6 +63,29 @@ body {
   gap: 1pc;
   flex-direction: row;
   align-items: center;
+  text-decoration: none;
+}
+.comentarios{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2pc;
+}
+.pessoa{
+  display: flex;
+  justify-content: space-around;
+  gap: 2pc;
+  background-color: white;
+  color: #484848;
+  border-radius: 2pc;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+}
+.img img{
+  width: 6pc;
+  height: 6pc;
+  border-radius: 100%;
 }
 @media screen and (max-width: 768px) {
   .intro{
@@ -118,6 +142,22 @@ main#carousel {
   pointer-events: none;
 }
 main#carousel2 {
+  grid-row: 1 / 2;
+  grid-column: 1 / 8;
+  width: 100vw;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  --items: 8; /* Total de itens */
+  --middle: 4; /* Posição do meio */
+  --position: 1; /* Posição inicial */
+  pointer-events: none;
+}
+main#carousel3 {
   grid-row: 1 / 2;
   grid-column: 1 / 8;
   width: 100vw;

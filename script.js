@@ -15,6 +15,8 @@ document.getElementById('prevBtn').addEventListener('click', () => {
 function updateCarousel() {
     carousel.style.setProperty('--position', currentPosition);
 }
+
+
 let currentPosition2 = 1; // Posição inicial do carrossel
 const totalItems2 = 8; // Total de itens no carrossel
 const carousel2 = document.getElementById('carousel2');
@@ -32,3 +34,25 @@ document.getElementById('prevBtn2').addEventListener('click', () => {
 function updateCarousel2() {
     carousel2.style.setProperty('--position', currentPosition2);
 }
+
+
+
+let currentPosition3 = 1; // Posição inicial do carrossel
+const totalItems3 = 8; // Total de itens no carrossel
+const carousel3 = document.getElementById('carousel3');
+
+document.getElementById('nextBtn3').addEventListener('click', () => {
+    currentPosition3 = currentPosition3 < totalItems3 ? currentPosition3 + 1 : 1; // Volta para o primeiro se for o último
+    updateCarousel3();
+});
+
+document.getElementById('prevBtn3').addEventListener('click', () => {
+    currentPosition3 = currentPosition3 > 1 ? currentPosition3 - 1 : totalItems; // Vai para o último se for o primeiro
+    updateCarousel3();
+});
+
+function updateCarousel3() {
+    carousel2.style.setProperty('--position', currentPosition3);
+}
+
+
