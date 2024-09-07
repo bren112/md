@@ -205,8 +205,31 @@ div.item {
   border-radius: 10px; /* Bordas arredondadas */
   padding: 10px; /* Espaçamento interno */
 }
+div.item2 {
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  background-color: coral; /* Cor padrão, será sobrescrita */
+  --r: calc(var(--position) - var(--offset));
+  --abs: max(calc(var(--r) * -1), var(--r));
+  transition: all 0.25s linear;
+  transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-300px * var(--r)));
+  z-index: calc((var(--position) - var(--abs)));
+  display: flex; /* Flex para alinhar conteúdo */
+  flex-direction: column; /* Para alinhar verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  justify-content: center; /* Centraliza verticalmente */
+  overflow: hidden; /* Impede que o conteúdo exceda os limites do item */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 10px; /* Espaçamento interno */
+}
 
 div.item img {
+  max-width: 100%; /* Faz com que a imagem não exceda a largura do card */
+  max-height: 70%; /* Limita a altura da imagem */
+  object-fit: contain; /* Mantém a proporção da imagem */
+}
+div.item2 img {
   max-width: 100%; /* Faz com que a imagem não exceda a largura do card */
   max-height: 70%; /* Limita a altura da imagem */
   object-fit: contain; /* Mantém a proporção da imagem */
@@ -219,8 +242,24 @@ div.item h3 {
   font-weight: bold; /* Deixa a fonte mais grossa */
   color: white; /* Cor do texto */
 }
+div.item2 h3 {
+  text-align: center; /* Centraliza o texto */
+  margin: 5px 0; /* Espaçamento vertical entre textos */
+  font-size: 1.5em; /* Aumenta o tamanho da fonte */
+  font-weight: bold; /* Deixa a fonte mais grossa */
+  color: white; /* Cor do texto */
+}
 
 div.item p {
+  text-align: center; /* Justifica o texto */
+  margin: 5px 0; /* Espaçamento vertical entre textos */
+  overflow: hidden; /* Impede que o texto saia do item */
+  white-space: nowrap; /* Impede que o texto quebre linhas */
+  text-overflow: ellipsis; /* Adiciona '...' se o texto for muito longo */
+  font-size: 0.9em; /* Diminui o tamanho da fonte */
+  color: white; /* Cor do texto */
+}
+div.item2 p {
   text-align: center; /* Justifica o texto */
   margin: 5px 0; /* Espaçamento vertical entre textos */
   overflow: hidden; /* Impede que o texto saia do item */
@@ -282,6 +321,12 @@ svg{
 }
 
 .card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 35pc;
+}
+.card2{
   display: flex;
   flex-direction: column;
   align-items: center;
